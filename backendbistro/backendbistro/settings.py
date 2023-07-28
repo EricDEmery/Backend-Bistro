@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-_h8y6=b@wn45@s3tlfm_v!v0-j61jl-2qq9$c#$dvna9f9_@w&
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['*']
+ALLOWED_HOSTS = ['*'] # Allows gitpod access
 
 CSRF_TRUSTED_ORIGINS = ['https://*.gitpod.io']
 
@@ -44,12 +44,15 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'menu', #menu model
+    "corsheaders", # giving access to CORS headers
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
