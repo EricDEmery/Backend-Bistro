@@ -32,7 +32,7 @@ class Menu_Item(models.Model):
     category = models.ForeignKey("Category", on_delete=models.CASCADE)  #Foreign key referencing category types. 1 to many
     ingredients = models.ManyToManyField(Ingredient)        #Many to many field referencing ingredient model
     
-    #Class method for Serializing json data and creating a boiler plate to outline api format initially used in react restaurant so I dont have to change react code
+    #Class method for json data and creating a boiler plate to outline api format initially used in react restaurant so I dont have to change react code
     def json(self):
 
         return {
